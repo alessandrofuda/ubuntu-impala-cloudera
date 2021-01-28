@@ -2,8 +2,10 @@
 Ubuntu Linux machine ready for Cloudera/Impala db connection testing.
 
 
-> ## To Create && Start from anywhere
-> ```docker run -it alessandrofuda/ubuntu-impala``` (create & start new container)
+## To Create && Start from anywhere
+(create & start New container)
+
+```docker run -it --name ubuntu_impala alessandrofuda/ubuntu-impala:210128.0``` (get latest tag!)
 
 ## To Start existing container (already created)
 ```
