@@ -5,7 +5,7 @@ Ubuntu Linux machine ready for Cloudera/Impala db connection testing.
 ## To Create && Start from anywhere (..docker running..)
 (create & start NEW container)
 
-```docker run -it --name ubuntu_impala alessandrofuda/ubuntu_impala:210128.0``` (get latest tag!)
+```docker run -it --name ubuntu_impala alessandrofuda/ubuntu_impala:210128.1``` (get latest tag!)
 
 ## .. or To Start existing container (already created)
 ```
@@ -30,10 +30,10 @@ docker ps -a
 docker commit <container-ID> ubuntu_impala:latest
 
 # tag for docker hub
-docker tag ubuntu_impala:latest alessandrofuda/ubuntu_impala:210128.0 (example tag!)
+docker tag ubuntu_impala:latest alessandrofuda/ubuntu_impala:210128.1 (example tag!)
 
 # push to docker hub
-docker push alessandrofuda/ubuntu_impala:210128.0
+docker push alessandrofuda/ubuntu_impala:210128.1
 ```
 
 <br/><br/><hr/><br/>
