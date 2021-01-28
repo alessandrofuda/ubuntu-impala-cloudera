@@ -2,7 +2,7 @@
 Ubuntu Linux machine ready for Cloudera/Impala db connection testing.
 
 
-## To Create && Start from anywhere
+## To Create && Start from anywhere (..docker running..)
 (create & start New container)
 
 ```docker run -it --name ubuntu_impala alessandrofuda/ubuntu-impala:210128.0``` (get latest tag!)
@@ -21,7 +21,7 @@ docker ps
 docker exec -it <container-id> bash
 ```
 
-## To fixing and Push running container to Docker Hub
+## To "freeze" running container to Docker Image and Push it to Docker Hub
 ```
 # get container ID
 docker ps -a
@@ -30,19 +30,24 @@ docker ps -a
 docker commit <container-ID> ubuntu_impala:latest
 
 # tag for docker hub
-docker tag ubuntu_impala:latest alessandrofuda/ubuntu_impala:210128.0 (example)
+docker tag ubuntu_impala:latest alessandrofuda/ubuntu_impala:210128.0 (example tag!)
 
 # push to docker hub
 docker push alessandrofuda/ubuntu_impala:210128.0
 ```
 
-## Image building procedure:
+<br/><br/><hr/><br/>
 
-``` docker run -it --name <optional-name> ubuntu:18.04  ```
+
+## Image building procedure (without Dockerfile):
+From host:
+```
+docker run -it --name <optional-name> ubuntu:18.04 
+```
 
 Inside docker container:
 ```
-FROM: ubuntu:18.04
+# FROM ubuntu
 
 apt update && apt upgrade -y
 apt install -y unixodbc
@@ -78,6 +83,6 @@ apt install git # --> export to github
 
 
 ## References
-Driver: https://www.cloudera.com/downloads/connectors/impala/odbc/2-6-11.html
-
-Doc: https://docs.cloudera.com/documentation/other/connectors/impala-odbc/2-6-11/Cloudera-ODBC-Driver-for-Impala-Install-Guide.pdf
+- Driver: https://www.cloudera.com/downloads/connectors/impala/odbc/2-6-11.html
+- Cloudera doc: https://docs.cloudera.com/documentation/other/connectors/impala-odbc/2-6-11/Cloudera-ODBC-Driver-for-Impala-Install-Guide.pdf
+- Docker docs
