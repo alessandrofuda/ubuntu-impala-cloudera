@@ -7,7 +7,7 @@ Ubuntu Linux machine ready for Cloudera/Impala db connection testing.
 
 ```docker run -it --name ubuntu_impala alessandrofuda/ubuntu-impala:210128.0``` (get latest tag!)
 
-## To Start existing container (already created)
+## .. or To Start existing container (already created)
 ```
 # find container-id
 docker ps -a
@@ -52,7 +52,8 @@ Inside docker container:
 apt update && apt upgrade -y
 apt install -y unixodbc
 apt install nano
-apt install -y sasl2-bin && apt install -y libsasl2-dev # for Cyrus-sasl libs
+# get Cyrus-sasl libs
+apt install -y sasl2-bin && apt install -y libsasl2-dev 
 
 # get .deb Driver file (by Cloudera) && import in root docker container
 # install drivers
